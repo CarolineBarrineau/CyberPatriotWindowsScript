@@ -1,0 +1,48 @@
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\MSConfig\startupfolder
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\MSConfig\startupreg
+
+$reguser\Software\Microsoft\Windows\CurrentVersion\Run
+$reguser\Software\Microsoft\Windows\CurrentVersion\RunOnce
+where
+$regusers = @(Get-ChildItem -path HKU:\ | Where-Object {$_.Name -like "*S-1*"})
+
+HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System 
+FilterAdministratorToken 1
+ConsentPromptBehaviorAdmin 1
+ConsentPromptBehaviorUser 0
+EnableInstallerDetection 1
+ValidateAdminCodeSignatures 1
+EnableLUA 1
+PromptOnSecureDesktop 1
+EnableVirtualization 1
+EnableVirtualization 1
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update
+AUOptions 4
+ElevateNonAdmins 1
+IncludeRecommendedUpdates 1
+ScheduledInstallTime 22
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server
+fDenyTSConnections 1
+AllowRemoteRPC 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Remote Assistance
+fAllowFullControl 0
+fAllowToGetHelp 0
+
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp
+UserAuthentication 1
+
+HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Remote Assistance
+CreateEncryptedOnlyTickets 1
+
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp fDisableEncryption 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\
